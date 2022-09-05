@@ -1,0 +1,21 @@
+<h2> Изменить столик</h2>
+<form #form="ngForm" (ngSubmit)="updateTable()"> 
+  
+  <div class="mb-3">
+    <label for="id" class="form-label" >Айди столика</label>
+    <input type='number' name="id" [(ngModel)]="tableDetails.id" readonly class="form-control" id="id">
+  </div> 
+
+    <div class="mb-3">
+      <label for="number" class="form-label" >Номер столика</label>
+      <input type='number' name="number" [(ngModel)]="tableDetails.number" class="form-control" id="number">
+    </div>
+
+    <div class="mb-3">
+      <label for="countOfSeats" class="form-label">Количество мест</label>
+      <input type='number'name="countOfSeats" [(ngModel)]="tableDetails.countOfSeats" class="form-control" id="countOfSeats">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Изменить </button>
+    <button type="button" class="btn btn-danger" (click)="deleteTable()"> Удалить </button>
+</form>

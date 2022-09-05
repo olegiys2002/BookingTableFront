@@ -1,0 +1,19 @@
+<div class="m-5">
+<button routerLink="add"> Добавить столик </button>
+<button class="m-5" (click)="getTablesIds()"> Добавить заказ </button>
+<table class="table table-hover">
+<tr class="table-active">
+  <td scope="row"> Номер столика </td>
+  <td> Количество мест </td>
+</tr>
+<tr *ngFor="let table of tables$ | async">
+    <td> {{table.number}}</td>
+    <td> {{table.countOfSeats}}</td>
+    <input (change)="filterCheckboxes($event)" type="checkbox" value="{{table.id}}" >
+    <td> <a [routerLink]="['edit',table.id]"> View </a></td>
+   
+</tr>
+</table>
+<a routerLink="testtable" >Angular material</a>
+<router-outlet> </router-outlet>
+</div>

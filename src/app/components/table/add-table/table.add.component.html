@@ -1,0 +1,18 @@
+
+
+
+<h2> Добавить новый столик</h2>
+
+<form #form="ngForm" (ngSubmit)="addTable()">  
+    <div class="mb-3">
+      <label for="number" class="form-label" >Номер столика</label>
+      <input type='number' name="number" [(ngModel)]="addTableRequest.number" required class="form-control" id="number">
+    </div>
+   
+    <div class="mb-3">
+      <label for="countOfSeats" class="form-label">Количество мест</label>
+      <input type='number'name="countOfSeats" [(ngModel)]="addTableRequest.countOfSeats" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>

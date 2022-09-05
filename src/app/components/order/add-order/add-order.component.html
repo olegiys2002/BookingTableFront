@@ -1,0 +1,13 @@
+
+
+<form #form="ngForm" (ngSubmit)="addOrder()">  
+    <div class="mb-3">
+      <label for="number" class="form-label" >Количество людей</label>
+      <input type='number' name="number" [(ngModel)]="order.countOfPeople" class="form-control" id="number">
+    </div>
+    <div class="mb-3">
+      <label for="countOfSeats" class="form-label">Удобное время</label>
+      <input type="date" name="countOfSeats" [(ngModel)]="order.dateOfReservation" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>

@@ -1,0 +1,21 @@
+
+<div class="m-5">
+<button routerLink="add"> Добавить </button>
+
+<table class="table table-hover">
+    <tr class="table-active">
+        <td > Id </td>
+        <td> Имя пользователя </td>
+        <td> Роль </td>
+        <td> Email</td>
+      </tr>
+    <tr *ngFor="let user of users$ | async">
+        <td> {{user.id}} </td>
+        <td> {{user.name}} </td>
+        <td> {{user.role}} </td>
+        <td> {{user.email}}</td>
+        <a [routerLink]="['edit',user.id]"> Посмотреть </a>
+    </tr>
+</table>
+<router-outlet> </router-outlet>
+</div>

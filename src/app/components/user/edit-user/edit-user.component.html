@@ -1,0 +1,32 @@
+<h2> Поменять юзера</h2>
+
+<form  [formGroup]="myForm">  
+
+  <div class="mb-3">
+    <label for="name" class="form-label" >Введите имя</label>
+    <input type='text' name="name" formControlName="name" class="form-control" id="name">
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Введите пароль</label>
+    <input type='password'name="password" formControlName="password" class="form-control" id="password">
+  </div>
+
+  <div class="mb-3">
+      <label for="email" class="form-label">Введите емайл </label>
+      <input type='email' name="email" formControlName="email" class="form-control" id="email">
+  </div>
+
+  <div class="mb-3">
+      <label for="role" class="form-label">Введите роль</label>
+      <input type='text'name="role" formControlName="role" class="form-control" id="role">
+  </div>
+  
+  <div class="mb-3">
+      <label for="avatar.image" class="form-label">Добавьте аватар</label>
+      <input type='file' (change)="onSelectedFile($event)" formControlName="image"  class="form-control" id="avatar.image">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="editUser()">Изменить </button>
+  <button type="button" class = "btn btn-danger" (click)="deleteUser()">Удалить</button>
+</form>

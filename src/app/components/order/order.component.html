@@ -1,0 +1,21 @@
+<div class="m-5">
+    
+  <a (click)="showTablesForOrder()"> Посмотреть столы </a>
+  <a (click)="hideTablesForOrder()"> Спрятать столы </a>
+    <table class="table table-hover">
+    <tr class="table-active">
+      <td scope="row"> Id </td>
+      <td> Число людей </td>
+      <td> Дата заказа </td>
+    </tr>
+    <tr *ngFor="let order of orders$ | async; let i = index">
+        <td> {{order.id}} </td>
+        <td> {{order.countOfPeople}} </td>
+        <td> {{order.dateOfReservation | date}}</td>
+        <app-tables-for-order *ngIf="tableIndex===2" [tables]="order.tables" > </app-tables-for-order>
+       <a [routerLink]="['edit',order.id]"> View </a>
+    </tr>  
+
+    </table>
+    <router-outlet> </router-outlet>
+    </div>

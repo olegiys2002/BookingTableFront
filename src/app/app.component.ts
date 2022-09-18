@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, retry } from 'rxjs';
-import { ITable } from './models/table';
 import { OnlineAssistantService } from './services/onlineAssistant.service';
-import { OrderService } from './services/order.service';
-import { TableService } from './services/table.service';
 
 @Component({
   selector: 'app-root',
@@ -36,13 +32,15 @@ export class AppComponent implements OnInit  {
     }
     return false;
   }
+
   logout()
   {
     localStorage.removeItem('jwt');
   }
+  
   async sendMessage()
   {
-   await this.assistant.send(this.message);
-   this.messageList.push(this.message);
+    await this.assistant.send(this.message);
+    this.messageList.push(this.message);
   }
 }

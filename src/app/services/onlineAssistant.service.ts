@@ -30,8 +30,9 @@ export class OnlineAssistantService
 
     public receiveMessageHandler()
     {
-        this.hubConnection.on("Receive Message", (message)=>{
+        this.hubConnection.on("Receive Message", (message,user)=>{
             console.log(message);
+            console.log(user);
         });
     }
 
